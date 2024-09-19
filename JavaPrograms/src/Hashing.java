@@ -3,70 +3,70 @@ import java.util.*;
 public class Hashing {
 
     //majority elements
-//    public static void majorityelement(int nums[]){
-//        HashMap<Integer,Integer> map=new HashMap<>();
-//        int n=nums.length;
-//        for(int i=0;i<n;i++){
-//            if(map.containsKey(nums[i])){
-//               map.put(nums[i],map.get(nums[i])+1);
-//            }else {
-//                map.put(nums[i],1);
-//            }
-//        }
-//
-//        for(int key:map.keySet()){
-//            if(map.get(key)> n/3){
-//                System.out.println(key);
-//            }
-//        }
-//    }
+    public static void majorityelement(int nums[]){
+        HashMap<Integer,Integer> map=new HashMap<>();
+        int n=nums.length;
+        for(int i=0;i<n;i++){
+            if(map.containsKey(nums[i])){
+               map.put(nums[i],map.get(nums[i])+1);
+            }else {
+                map.put(nums[i],1);
+            }
+        }
 
-    //Union of 2 arrays
-//    public static int Unionofarrays(int arr1[],int arr2[]){
-//        HashSet<Integer> set= new HashSet<>();
-//
-//        for(int i=0;i<arr1.length;i++){
-//            set.add(arr1[i]);
-//        }
-//        for(int j=0;j<arr2.length;j++){
-//            set.add(arr2[j]);
-//        }
-//
-//        return set.size();
-//
-//    }
+        for(int key:map.keySet()){
+            if(map.get(key)> n/3){
+                System.out.println(key);
+            }
+        }
+    }
 
-//    public static int Intersectionofarrays(int arr1[],int arr2[]){
-//        HashSet<Integer> set= new HashSet<>();
-//        int c=0;
-//        for(int i=0;i<arr1.length;i++){
-//            set.add(arr1[i]);
-//        }
-//        for(int j=0;j<arr2.length;j++){
-//            if(set.contains(arr2[j])) {
-//                c++;
-//                set.remove(arr2[j]);
-//            }
-//        }
-//        return c;
-//    }
+   // Union of 2 arrays
+    public static int Unionofarrays(int arr1[],int arr2[]){
+        HashSet<Integer> set= new HashSet<>();
+
+        for(int i=0;i<arr1.length;i++){
+            set.add(arr1[i]);
+        }
+        for(int j=0;j<arr2.length;j++){
+            set.add(arr2[j]);
+        }
+
+        return set.size();
+
+    }
+
+    public static int Intersectionofarrays(int arr1[],int arr2[]){
+        HashSet<Integer> set= new HashSet<>();
+        int c=0;
+        for(int i=0;i<arr1.length;i++){
+            set.add(arr1[i]);
+        }
+        for(int j=0;j<arr2.length;j++){
+            if(set.contains(arr2[j])) {
+                c++;
+                set.remove(arr2[j]);
+            }
+        }
+        return c;
+    }
 
     //Find Itinerary from tickets
-//    public static String getStart(HashMap<String,String> tick)
-//    {
-//        HashMap<String,String> revMap = new HashMap<>();
-//
-//        for(String key : tick.keySet()){
-//            revMap.put(tick.get(key),key);
-//        }
-//
-//        for(String key : tick.keySet()){
-//            if(!revMap.containsKey(key)){
-//                return key;
-//            }
-//        }
-//        return null;
-//    }
+    public static String getStart(HashMap<String,String> tick)
+    {
+        HashMap<String,String> revMap = new HashMap<>();
+
+        for(String key : tick.keySet()){
+            revMap.put(tick.get(key),key);
+        }
+
+        for(String key : tick.keySet()){
+            if(!revMap.containsKey(key)){
+                return key;
+            }
+        }
+        return null;
+    }
 
     //Subarray Sum
 
@@ -179,12 +179,12 @@ public class Hashing {
         tickets.put("Goa","Chennai");
         tickets.put("Delhi","Goa");
 
-//        String start = getStart(tickets);
-//
-//        while(tickets.containsKey(start)){
-//            System.out.println(start);
-//            start=tickets.get(start);
-//        }
-//        System.out.println(start);
+        String start = getStart(tickets);
+
+        while(tickets.containsKey(start)){
+            System.out.println(start);
+            start=tickets.get(start);
+        }
+        System.out.println(start);
     }
 }

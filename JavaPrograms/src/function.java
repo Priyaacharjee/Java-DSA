@@ -1,79 +1,79 @@
 import java.util.*;
 
 public class function {
-//    public static int multiply(int a,int b)
-//    {
-//        int prod=a*b;
-//        return prod;
-//    }
+    public static int multiply(int a,int b)
+    {
+        int prod=a*b;
+        return prod;
+    }
 
-    //table
-//    public static void table(int n){
-//        for(int i=1;i<=10;i++){
-//            System.out.println(n+"x"+i+"="+n*i);
-//        }
-//    }
+   // table
+    public static void table(int n){
+        for(int i=1;i<=10;i++){
+            System.out.println(n+"x"+i+"="+n*i);
+        }
+    }
 
-//    public static int fact(int n){
-//        int f=1;
-//        for(int i=1;i<=n;i++)
-//        {
-//            f= f*i;
-//        }
-//        return f;
-//    }
-//
-//    public static int bino(int n,int r){
-//        int n_fact=fact(n);
-//        int r_fact=fact(r);
-//        int nmr_fact=fact(n-r);
-//        int bin=n_fact/(r_fact*nmr_fact);
-//
-//        return bin;
-//    }
-//    public static int sum(int a,int b){
-//        return a+b;
-//    }
-//    public static float sum(float a,int b,int c){
-//        return a+b+c;
-//    }
+    public static int fact(int n){
+        int f=1;
+        for(int i=1;i<=n;i++)
+        {
+            f= f*i;
+        }
+        return f;
+    }
 
-//    public static void checkprime(int n){
-//        int flag =1;
-//      for(int i=2;i<=n-1;i++){
-//          if(n%i==0){
-//              flag=0;
-//          }
-//      }
-//      if(flag==1)
-//          System.out.println(n+ " is prime");
-//      else {
-//          System.out.println(n+ " is not prime");
-//      }
-//    }
+    public static int bino(int n,int r){
+        int n_fact=fact(n);
+        int r_fact=fact(r);
+        int nmr_fact=fact(n-r);
+        int bin=n_fact/(r_fact*nmr_fact);
+
+        return bin;
+    }
+    public static int sum(int a,int b){
+        return a+b;
+    }
+    public static float sum(float a,int b,int c){
+        return a+b+c;
+    }
+
+    public static void checkprime(int n){
+        int flag =1;
+      for(int i=2;i<=n-1;i++){
+          if(n%i==0){
+              flag=0;
+          }
+      }
+      if(flag==1)
+          System.out.println(n+ " is prime");
+      else {
+          System.out.println(n+ " is not prime");
+      }
+    }
 
 
-//    //optimized Prime
-//    public static boolean isPrime(int n){
-//        if(n==2){
-//            return true;
-//        }
-//        for(int i=2;i<=Math.sqrt(n);i++){
-//            if(n%i==0){
-//                return false;
-//            }
-//        }
-//        return true;
-//    }
-//
-//    public static void Primerange(int a,int n){
-//        for(int i=a;i<=n;i++){
-//            if(isPrime(i)){
-//                System.out.print(i+" ");
-//            }
-//        }
-//    }
-//
+    //optimized Prime
+    public static boolean isPrime(int n){
+        if(n==2){
+            return true;
+        }
+        for(int i=2;i<=Math.sqrt(n);i++){
+            if(n%i==0){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static void Primerange(int a,int n){
+        for(int i=a;i<=n;i++){
+            if(isPrime(i)){
+                System.out.print(i+" ");
+            }
+        }
+    }
+
 //    public static void main (String arg[]){
 //        Scanner sc= new Scanner(System.in);
 ////        System.out.print("Enter a:");

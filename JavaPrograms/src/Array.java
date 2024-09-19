@@ -87,9 +87,7 @@ public class Array {
 
 
 
-    //--------------Advaced Array Problems---------//
-
-
+    //-------------------Advaced Array Problems---------------------//
 
 
 
@@ -184,7 +182,7 @@ public class Array {
     }
 
 
-    //---Trapping Rainwater--
+    //------------------Trapping Rainwater-----------------
 
 //    public static int trappedRainwater(int height[],int n){
 //        //int h=height.length;

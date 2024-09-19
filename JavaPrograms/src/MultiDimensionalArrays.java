@@ -10,144 +10,143 @@ public class MultiDimensionalArrays {
         }
     }
 
-//    public static boolean search(int matrix[][],int row,int col,int key){
-//        for(int i=0;i<row;i++){
-//            for(int j=0;j<col;j++){
-//                if(matrix[i][j]==key){
-//                    System.out.println("Found at cell ("+i+","+j+")");
-//                    return true;
-//                }
-//            }
-//        }
-//        System.out.println("Key not found.");
-//        return false;
-//    }
+    public static boolean search(int matrix[][],int row,int col,int key){
+        for(int i=0;i<row;i++){
+            for(int j=0;j<col;j++){
+                if(matrix[i][j]==key){
+                    System.out.println("Found at cell ("+i+","+j+")");
+                    return true;
+                }
+            }
+        }
+        System.out.println("Key not found.");
+        return false;
+    }
 
-//    public static void findmaxmin(int a[][],int row,int col){
-//        int max=Integer.MIN_VALUE,min=Integer.MAX_VALUE;
-//        for(int i=0;i<row;i++){
-//            for(int j=0;j<col;j++){
-//                if(a[i][j]>max){
-//                    max=a[i][j];
-//                }
-//                if(a[i][j]<min){
-//                    min=a[i][j];
-//                }
-//            }
-//        }
-//        System.out.print("The max element is:"+max);
-//        System.out.print("\nThe min element is:"+min);
-//    }
+    public static void findmaxmin(int a[][],int row,int col){
+        int max=Integer.MIN_VALUE,min=Integer.MAX_VALUE;
+        for(int i=0;i<row;i++){
+            for(int j=0;j<col;j++){
+                if(a[i][j]>max){
+                    max=a[i][j];
+                }
+                if(a[i][j]<min){
+                    min=a[i][j];
+                }
+            }
+        }
+        System.out.print("The max element is:"+max);
+        System.out.print("\nThe min element is:"+min);
+    }
 
     //Spiral matrix
-//    public static void printSpiral(int a[][],int row,int col){
-//       int startRow=0,startCol=0,endrow=row-1,endcol=col-1;
-//       while(startRow<=endrow &&  startCol<=endcol){
-//           //top
-//           for(int j=startCol;j<=endcol;j++){
-//               System.out.print(a[startRow][j]+" ");
-//           }
-//
-//           //right
-//           for(int i=startRow+1;i<=endrow;i++){
-//               System.out.print(a[i][endcol]+" ");
-//           }
-//
-//           //bottom
-//           for(int j=endcol-1;j>=startCol;j--){
-//               if(startRow == endrow){
-//                   break;
-//               }
-//               System.out.print(a[endrow][j]+" ");
-//           }
-//
-//           //left
-//           for(int i=endrow-1;i>=startRow+1;i--){
-//               if(startCol == endcol){
-//                   break;
-//               }
-//               System.out.print(a[i][startCol]+" ");
-//           }
-//           startCol++;
-//           startRow++;
-//           endrow--;
-//           endcol--;
-//
-//       }
-//    }
+    public static void printSpiral(int a[][],int row,int col){
+       int startRow=0,startCol=0,endrow=row-1,endcol=col-1;
+       while(startRow<=endrow &&  startCol<=endcol){
+           //top
+           for(int j=startCol;j<=endcol;j++){
+               System.out.print(a[startRow][j]+" ");
+           }
+
+           //right
+           for(int i=startRow+1;i<=endrow;i++){
+               System.out.print(a[i][endcol]+" ");
+           }
+
+           //bottom
+           for(int j=endcol-1;j>=startCol;j--){
+               if(startRow == endrow){
+                   break;
+               }
+               System.out.print(a[endrow][j]+" ");
+           }
+
+           //left
+           for(int i=endrow-1;i>=startRow+1;i--){
+               if(startCol == endcol){
+                   break;
+               }
+               System.out.print(a[i][startCol]+" ");
+           }
+           startCol++;
+           startRow++;
+           endrow--;
+           endcol--;
+
+       }
+    }
 
     //Diagonal Sum
-
-//    public static int diagonalsum(int a[][],int row,int col){
-//        int sum=0;
-////        for(int i=0;i<row;i++){          //TC=O(n^2)
-////            for(int j=0;j<col;j++){
-////                if(i==j){
-////                    sum+=a[i][j];
-////                }
-////                else if(i+j==a.length-1){  //in place of a.length we can take the row no also
-////                    sum+=a[i][j];
-////                }
-////            }
-////        }
-//
-//        //Optimized one = O(n)
-//        for(int i=0;i<row;i++){
-//            //pd
-//            sum+=a[i][i];
-//
-//            //sd
-//            if(i!=row-1-i) {
-//                sum += a[i][row - i - 1];
+    public static int diagonalsum(int a[][],int row,int col){
+        int sum=0;
+//        for(int i=0;i<row;i++){          //TC=O(n^2)
+//            for(int j=0;j<col;j++){
+//                if(i==j){
+//                    sum+=a[i][j];
+//                }
+//                else if(i+j==a.length-1){  //in place of a.length we can take the row no also
+//                    sum+=a[i][j];
+//                }
 //            }
 //        }
-//        return sum;
-//    }
+
+        //Optimized one = O(n)
+        for(int i=0;i<row;i++){
+            //pd
+            sum+=a[i][i];
+
+            //sd
+            if(i!=row-1-i) {
+                sum += a[i][row - i - 1];
+            }
+        }
+        return sum;
+    }
 
      //Search in sorted matrix //Staircase search //0(n+m)
-//    public static boolean staircasesearch(int a[][],int row,int col,int key){
-//          //int r=0,c=a[0].length-1;
-//        int r=0,c=col-1;
-//          while(r<row && c>=0){
-//              if(a[r][c]==key){
-//                  System.out.println("found key at ("+r+","+c+")");
-//                  return true;
-//              }
-//              else if(key<a[r][c]){
-//                  c--;
-//              }
-//              else{
-//                  r++;
-//              }
-//          }
-//        System.out.println("key not found!");
-//        return false;
-//    }
+    public static boolean staircasesearch(int a[][],int row,int col,int key){
+          //int r=0,c=a[0].length-1;
+        int r=0,c=col-1;
+          while(r<row && c>=0){
+              if(a[r][c]==key){
+                  System.out.println("found key at ("+r+","+c+")");
+                  return true;
+              }
+              else if(key<a[r][c]){
+                  c--;
+              }
+              else{
+                  r++;
+              }
+          }
+        System.out.println("key not found!");
+        return false;
+    }
 
 
     //-----------------ASSIGNMENT-------------------
 
-//    public static int countnum(int a[][],int row,int col){
-//        int c=0;
-//        for(int i=0;i<row;i++){
-//            for(int j=0;j<col;j++){
-//                if(a[i][j]==7){
-//                    c++;
-//                }
-//            }
-//        }
-//        return c;
-//    }
+    public static int countnum(int a[][],int row,int col){
+        int c=0;
+        for(int i=0;i<row;i++){
+            for(int j=0;j<col;j++){
+                if(a[i][j]==7){
+                    c++;
+                }
+            }
+        }
+        return c;
+    }
 
-//    public static int findsum(int a[][],int row,int col){
-//        int sum=0;
-//
-//        for(int j=0;j<col;j++){
-//                sum+=a[1][j];
-//            }
-//
-//        return sum;
-//    }
+    public static int findsum(int a[][],int row,int col){
+        int sum=0;
+
+        for(int j=0;j<col;j++){
+                sum+=a[1][j];
+            }
+
+        return sum;
+    }
 
     //Transpose of matrix
     public static void transpose(int a[][],int row,int col){
