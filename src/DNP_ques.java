@@ -326,6 +326,7 @@ public class DNP_ques {
 
         //System.out.println(reverse(n));
 
+
         // convertnumtoChar(65,66,67,68);
 
         // calmaxmarks(70,70,60);
@@ -334,11 +335,24 @@ public class DNP_ques {
 
         // System.out.println(removeInformal(10,"FIFFIIFFFI"));
 
+       // convertnumtoChar(65,66,67,68);
+
+       // calmaxmarks(70,70,60);
+
+      //  sayMonth(2);
+
+       // System.out.println(removeInformal(10,"FIFFIIFFFI"));
+
+
 //        int a[]={2,3,5,15};
 //        changeInwords(a);
 
         collatzSequence(5);
+
         // maxlengthCollatz(5)
+
+       // maxlengthCollatz(5)
+
 
     }
 }

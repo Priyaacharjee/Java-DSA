@@ -130,6 +130,7 @@ public class Accenture {
     public static int countDistinctElements(int[] arr, int n) {
         Set<Integer> distinctSet = new HashSet<>();
 
+
         for (int i = 0; i < n; i++) {
             distinctSet.add(arr[i]);
         }
@@ -200,25 +201,26 @@ public class Accenture {
 
     }
 
-    public static void reverseArr(int a[]){
-        int n=a.length;
-        for(int i=0;i<n/2;i++){
-            int temp=a[i];
-            a[i]=a[n-i-1];
-            a[n-i-1]=temp;
-        }
-        //System.out.println(Arrays.toString(a));
+   public static void reverseArr(int a[]){
+    int n=a.length;
+    for(int i=0;i<n/2;i++){
+        int temp=a[i];
+        a[i]=a[n-i-1];
+        a[n-i-1]=temp;
     }
-    public static int SumOfEvenIndex(int a[],int n){
-        reverseArr(a);
-        int sum=0;
-        for(int i=0;i<n;i++){
-            if(i%2==0) {
-                sum += a[i];
-            }
+    //System.out.println(Arrays.toString(a));
+}
+public static int SumOfEvenIndex(int a[],int n) {
+    reverseArr(a);
+    int sum = 0;
+    for (int i = 0; i < n; i++) {
+        if (i % 2 == 0) {
+            sum += a[i];
+
         }
-        return sum;
     }
+    return sum;
+}
 
     public static boolean prime(int n){
         if(n<=1){
@@ -1797,8 +1799,12 @@ public class Accenture {
             return false;
         }
         if(s1.length()==s2.length()){
+
             s=s1.toLowerCase();
             t=s2.toLowerCase();
+
+           s=s1.toLowerCase();
+           t=s2.toLowerCase();
 
             char s1Arr[]=s.toCharArray();
             char s2Arr[]=t.toCharArray();
@@ -2313,7 +2319,11 @@ public class Accenture {
 
         //  System.out.println(isNextPrime(7,11));
 
+
         // System.out.println(binarySum("1010","1011"));
+
+           // System.out.println(binarySum("1010","1011"));
+
 
 //            Scanner sc = new Scanner(System.in);
 //            // Input: 24-hour format
@@ -2334,7 +2344,11 @@ public class Accenture {
 //            String str="abc.aa.b.baace";
 //            System.out.println(longestSubstring(str));
 
+
         //   System.out.println(countOccurrences("oxttojklts","t",11));
+
+         //   System.out.println(countOccurrences("oxttojklts","t",11));
+
 
         //    System.out.println(anagram("apriy","Priya"));
 
@@ -2371,11 +2385,19 @@ public class Accenture {
 //        double rotations = calculateRotations(x_init, y_init, x_final, y_final, radius);
 //        System.out.println("Number of rotations: " + rotations);
 
+
         //   findRoots(1,-7,12);
 
         //  System.out.println(largestOddInteger("30752"));
 
         // System.out.println(whiteSpacediff("He ll o W or ld","Hello World"));
+
+      //   findRoots(1,-7,12);
+
+      //  System.out.println(largestOddInteger("30752"));
+
+       // System.out.println(whiteSpacediff("He ll o W or ld","Hello World"));
+
 
         String a[]={"Hello","ccbc","aaeiou"};
         System.out.println(maxPermutationValue(a));
@@ -2384,3 +2406,4 @@ public class Accenture {
 
 
 }
+
