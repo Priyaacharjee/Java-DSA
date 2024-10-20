@@ -32,7 +32,7 @@ public class DNP_ques {
         }
 
         // Sum the digits that appear exactly once
-      n = originalN;  // Reset n to its original value for another traversal
+        n = originalN;  // Reset n to its original value for another traversal
         while (n > 0) {
             int digit = n % 10;
             if (map.get(digit) == 1) {
@@ -61,7 +61,7 @@ public class DNP_ques {
     public static int Nthfib(int n){
         int fib,a=0,b=1,c=0;
 
-         if(n==0|| n==1){
+        if(n==0|| n==1){
             return 0;
         }
         for(int i=2;i<n;i++){
@@ -75,70 +75,70 @@ public class DNP_ques {
 
 
     public static int generatePIN(int input1, int input2, int input3) {
-            // Extracting units, tens, and hundreds digits
-            int unit1 = input1 % 10;
-            int unit2 = input2 % 10;
-            int unit3 = input3 % 10;
+        // Extracting units, tens, and hundreds digits
+        int unit1 = input1 % 10;
+        int unit2 = input2 % 10;
+        int unit3 = input3 % 10;
 
-            int tens1 = (input1 / 10) % 10;
-            int tens2 = (input2 / 10) % 10;
-            int tens3 = (input3 / 10) % 10;
+        int tens1 = (input1 / 10) % 10;
+        int tens2 = (input2 / 10) % 10;
+        int tens3 = (input3 / 10) % 10;
 
-            int hundreds1 = (input1 / 100) % 10;
-            int hundreds2 = (input2 / 100) % 10;
-            int hundreds3 = (input3 / 100) % 10;
+        int hundreds1 = (input1 / 100) % 10;
+        int hundreds2 = (input2 / 100) % 10;
+        int hundreds3 = (input3 / 100) % 10;
 
-            // Determine the least values for units, tens, and hundreds positions
-            int unitPosition = Math.min(unit1, Math.min(unit2, unit3));
-            int tensPosition = Math.min(tens1, Math.min(tens2, tens3));
-            int hundredsPosition = Math.min(hundreds1, Math.min(hundreds2, hundreds3));
+        // Determine the least values for units, tens, and hundreds positions
+        int unitPosition = Math.min(unit1, Math.min(unit2, unit3));
+        int tensPosition = Math.min(tens1, Math.min(tens2, tens3));
+        int hundredsPosition = Math.min(hundreds1, Math.min(hundreds2, hundreds3));
 
-            // Determine the maximum value among all digits
-            int maxDigit = Math.max(Math.max(unit1, unit2), Math.max(unit3, Math.max(tens1, Math.max(tens2, Math.max(tens3, Math.max(hundreds1, Math.max(hundreds2, hundreds3)))))));
+        // Determine the maximum value among all digits
+        int maxDigit = Math.max(Math.max(unit1, unit2), Math.max(unit3, Math.max(tens1, Math.max(tens2, Math.max(tens3, Math.max(hundreds1, Math.max(hundreds2, hundreds3)))))));
 
-            // Construct the PIN
-            int pin = maxDigit * 1000 + hundredsPosition * 100 + tensPosition * 10 + unitPosition;
+        // Construct the PIN
+        int pin = maxDigit * 1000 + hundredsPosition * 100 + tensPosition * 10 + unitPosition;
 
-            return pin;
-        }
+        return pin;
+    }
 
 
-        public static List<List<Integer>> findConsecutiveSums(int N) {
-            List<List<Integer>> result = new ArrayList<>();
-            int start = 1;
-            int end = 1;
-            int sum = 0;
+    public static List<List<Integer>> findConsecutiveSums(int N) {
+        List<List<Integer>> result = new ArrayList<>();
+        int start = 1;
+        int end = 1;
+        int sum = 0;
 
-            while (start <= N / 2 + 1) {
-                if (sum < N) {
-                    sum += end;
-                    end++;
-                } else if (sum > N) {
-                    sum -= start;
-                    start++;
-                } else {
-                    List<Integer> sequence = new ArrayList<>();
-                    for (int i = start; i < end; i++) {
-                        sequence.add(i);
-                    }
-                    result.add(sequence);
-                    sum -= start;
-                    start++;
+        while (start <= N / 2 + 1) {
+            if (sum < N) {
+                sum += end;
+                end++;
+            } else if (sum > N) {
+                sum -= start;
+                start++;
+            } else {
+                List<Integer> sequence = new ArrayList<>();
+                for (int i = start; i < end; i++) {
+                    sequence.add(i);
                 }
+                result.add(sequence);
+                sum -= start;
+                start++;
             }
-
-            return result;
         }
 
-        public static int returnNum(int c,int n){
-          int x=n/c;
-          if(n%c!=0){
-              x++;
-          }
-          return x;
-        }
+        return result;
+    }
 
-        public static int subArray3(int a[],int n){
+    public static int returnNum(int c,int n){
+        int x=n/c;
+        if(n%c!=0){
+            x++;
+        }
+        return x;
+    }
+
+    public static int subArray3(int a[],int n){
         int c=0;
 //         for(int i=0;i<=a.length-3;i++){
 //                 for(int j=i;j<i+3;j++){
@@ -148,15 +148,15 @@ public class DNP_ques {
 //                 System.out.println();
 //                 c++;
 //    }
- //            return c;
+        //            return c;
 
-            for(int i=0;i<a.length-2;i++){
-                if(a[i]+a[i+2]==a[i+1]){
-                    c++;
-                }
+        for(int i=0;i<a.length-2;i++){
+            if(a[i]+a[i+2]==a[i+1]){
+                c++;
             }
-            return c;
         }
+        return c;
+    }
 
     public static int togglebit(int n,int i){
         int pow=0;
@@ -189,14 +189,110 @@ public class DNP_ques {
         return rev;
     }
 
+    public static void convertnumtoChar(int a,int b,int c,int d){
+        char p,q,r,s;
+        p=(char)a;
+        q=(char)b;
+        r=(char)c;
+        s=(char)d;
+
+        System.out.print(p);
+        System.out.print(q);
+        System.out.print(r);
+        System.out.print(s);
+    }
+
+    public static void calmaxmarks(int c,int e,int m){
+        int CSE=c,ECE=e,MECH=m;
+
+        if(CSE<0 || ECE<0 ||MECH<0){
+            System.out.println("Invalid Input");
+        }
+        if(CSE==ECE && ECE==MECH){
+            System.out.println("None of the dept got highest marks");
+        }
+        int highestMarks=Math.max(CSE,Math.max(ECE,MECH));
+
+        //return ((highestMarks==CSE)?"CSE":(highestMarks==ECE)?"ECE":"MECH");
+        if(highestMarks==CSE){
+            System.out.println("CSE");
+        }if(highestMarks==ECE){
+            System.out.println("ECE");
+        }if(highestMarks==MECH){
+            System.out.println("MECH");
+        }
+
+    }
+
+    public static void sayMonth(int mon){
+        if (mon>=3 && mon<=5)
+            System.out.println("Spring");
+        if (mon>=6 && mon<=8)
+            System.out.println("Summer");
+        if (mon>=9 && mon<=11)
+            System.out.println("Autumn");
+        else
+            System.out.println("Winter");
+
+    }
+
+    public static int removeInformal(int n,String s){
+        int c=0,firstInf=-1;
+        for(int i=0;i<n;i++){
+            if(s.charAt(i)=='I'){
+                firstInf=i;
+                break;
+            }
+        }
+        StringBuilder sb=new StringBuilder();
+        for(int i=0;i<n;i++){
+            if(i==firstInf || s.charAt(i)!='I'){
+                sb.append(s.charAt(i));
+            }
+        }
+        return sb.toString().length()-1;
+    }
+
+    public static void changeInwords(int a[]){
+        String ans="";
+        for(int i=0;i<a.length;i++){
+            if(a[i]%3==0 && a[i]%5==0){
+                ans+="ThreeFive";
+            }else if(a[i]%3==0){
+                ans+="Three";
+            }else if(a[i]%5==0){
+                ans+="Five";
+            }else{
+                ans+=String.valueOf(a[i]);
+            }
+            ans+=" ";
+        }
+        System.out.println(ans);
+    }
+
+    public static void collatzSequence(int n){
+        while(n!=1){
+            System.out.print(n+" ");
+            if(n%2==0){
+                n/=2;
+            }else{
+                n=3*n+1;
+            }
+        }
+        System.out.print(n);
+    }
+
+
+
+
 
     public static void main (String args[]){
         Scanner sc= new Scanner(System.in);
-       System.out.println("\nEnter the value of n:");
-       int n=sc.nextInt();
+//       System.out.println("\nEnter the value of n:");
+//       int n=sc.nextInt();
 //
-       //System.out.println(Nonrepeateddig(n));
-       // System.out.println(sumOfUniqueDigits(n));
+        //System.out.println(Nonrepeateddig(n));
+        // System.out.println(sumOfUniqueDigits(n));
 
 //        System.out.print("Intput1: ");
 //        int input1=sc.nextInt();
@@ -228,10 +324,21 @@ public class DNP_ques {
 //
 //        System.out.println("the new no is:"+togglebit(n,idx));
 
-        System.out.println(reverse(n));
+        //System.out.println(reverse(n));
+
+        // convertnumtoChar(65,66,67,68);
+
+        // calmaxmarks(70,70,60);
+
+        //  sayMonth(2);
+
+        // System.out.println(removeInformal(10,"FIFFIIFFFI"));
+
+//        int a[]={2,3,5,15};
+//        changeInwords(a);
+
+        collatzSequence(5);
+        // maxlengthCollatz(5)
 
     }
 }
-
-
-
