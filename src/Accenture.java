@@ -455,6 +455,19 @@ public static int SumOfEvenIndex(int a[],int n) {
         return ms;
     }
 
+//    public static int largestSubarraySum(int a[]){
+//        int ms=Integer.MIN_VALUE;
+//        int cs=0;
+//        for(int i=0;i<a.length;i++){
+//            cs+=a[i];
+//            ms=Math.max(cs,ms);
+//            if(cs<0){
+//                cs=0;
+//            }
+//        }
+//        return ms;
+//    }
+
     public static int findTarget(int a[],int target){
         int s=0;int e=a.length-1;
         while(s<e){
@@ -1150,7 +1163,17 @@ public static int SumOfEvenIndex(int a[],int n) {
         reverse(a,0,a.length-1);
         reverse(a,0,k-1);
         reverse(a,k,a.length-1);
+
+        //brute force approach
+//    for(int i=0;i<k;i++){
+//        int temp=a[a.length-1];
+//        for(int j=a.length-2;j>=0;j--){
+//            a[j+1]=a[j];
+//        }
+//        a[0]=temp;
+//    }]
     }
+
     public static void reverse(int a[],int s,int e){
         while(s<e){
             int temp=a[s];
@@ -1659,6 +1682,27 @@ public static int SumOfEvenIndex(int a[],int n) {
     //19th sept
     //Given an integer n,break it into the sum of k positive integers,where k>=2;and maximize the product of those integers.
     // Return the maximum product you can get.
+//    class IntegerBreak {
+//        public static void main(String[] args) {
+//            int N = 10;
+//            System.out.println(solution(N));
+//        }
+//
+//        public static int solution(int N) {
+//            if (N == 1)
+//                return 0;
+//            if (N == 2)
+//                return 1;
+//
+//            int maxThree = N / 3;
+//            int rem = N % 3;
+//
+//            if (rem == 1) {
+//                maxThree--;
+//            }
+//            return (int) Math.pow(3, maxThree) * 4;
+//        }
+//    }
 
 
     //20th sept + 21st sept
@@ -1675,7 +1719,46 @@ public static int SumOfEvenIndex(int a[],int n) {
 
     //20th sept + 21st sept
     //find vertices
-
+//    class RemainingVertices {
+//        public static void main(String[] args) {
+//            int X1 = 1, X2 = 3, Y1 = 2, Y2 = 4;
+//            int arr[] = solution(X1, Y1, X2, Y2);
+//            System.out.println("(" + arr[0] + "," + arr[1] + ")" + " , " + "(" + arr[2] + "," + arr[3] + ")");
+//        }
+//
+//        public static int[] solution(int X1, int Y1, int X2, int Y2) {
+//            int ans[] = new int[4];
+//            int X3, Y3, X4, Y4;
+//            int side = Math.abs(X1 - X2);
+//
+//            if (Y1 == Y2) {
+//                X3 = X1;
+//                Y3 = Y1 + side;
+//
+//                X4 = X2;
+//                Y4 = Y2 + side;
+//            } else if (Y1 < Y2) {
+//                X3 = X1;
+//                Y3 = Y1 + side;
+//
+//                X4 = X2;
+//                Y4 = Y2 - side;
+//            } else {
+//                X3 = X1;
+//                Y3 = Y1 - side;
+//
+//                X4 = X2;
+//                Y4 = Y2 + side;
+//            }
+//
+//            ans[0] = X3;
+//            ans[1] = Y3;
+//            ans[2] = X4;
+//            ans[3] = Y4;
+//
+//            return ans;
+//        }
+//    }
 
     //20th sept
     public static boolean isNextPrime(int a,int b){
@@ -1721,6 +1804,8 @@ public static int SumOfEvenIndex(int a[],int n) {
 //        return sum.toString(2);
 //    }
 
+
+    //dict prob 23rd
     //23rd sept
     //Clock Problem
     public static void convertTo12Hour(int hour,int min){
@@ -1752,6 +1837,27 @@ public static int SumOfEvenIndex(int a[],int n) {
         return longWord.length();
     }
 
+    //Method 2(better to rem)
+
+//    public static String longestSubstring(String s1){
+//        String lstr="";
+//        String cstr="";
+//        for(int i=0;i<s1.length();i++){
+//            if(s1.charAt(i)=='.'){
+//                if(cstr.length()>lstr.length()){
+//                    lstr=cstr;
+//                }
+//                cstr="";
+//            }else{
+//                cstr+=s1.charAt(i);
+//            }
+//        }
+//        if(cstr.length()>lstr.length()){
+//            lstr=cstr;
+//        }
+//        return lstr;
+//    }
+
     //24th sept
     public static int countOccurrences(String ip1,String ip3,int ip2 ){
         int c=0;
@@ -1761,12 +1867,30 @@ public static int SumOfEvenIndex(int a[],int n) {
         }
         char find=ip3.charAt(0);
         for(int i=0;i<ip1.length();i++){
-            if(ip1.charAt(i)==ip3.charAt(i)){
+            if(ip1.charAt(i)==find){
                 c++;
             }
         }
         return c;
     }
+
+    //24th sept //method 2
+    public static int countStringOccur(String s1,String s2,int n){
+        int len1=s1.length();
+        int len2=s2.length();
+
+        int c=0,i=0;
+        while(i<len1){
+            if(s2.equals(s1.substring(i,i+len2))){
+                i+=len2;
+                c++;
+            }else{
+                i++;
+            }
+        }
+        return c;
+    }
+
 
 //    public static int countOccurrences(String ip1, String ip3, int ip2) {
 //        int c = 0;
@@ -1799,9 +1923,6 @@ public static int SumOfEvenIndex(int a[],int n) {
             return false;
         }
         if(s1.length()==s2.length()){
-
-            s=s1.toLowerCase();
-            t=s2.toLowerCase();
 
            s=s1.toLowerCase();
            t=s2.toLowerCase();
@@ -1960,6 +2081,7 @@ public static int SumOfEvenIndex(int a[],int n) {
         int totalUniqueConsonants = consonants.size();
         return factorial(totalUniqueConsonants);
 
+
         //handling all cases
 //        int totalConsonants = 0;
 //        for (int count : consonants.values()) {
@@ -1978,6 +2100,79 @@ public static int SumOfEvenIndex(int a[],int n) {
 //        return permutations;
     }
 
+    //28th aug
+    public static String countSpaceswithnum(String s1,String s2){
+        int c1=0;
+        int c2=0;
+        String ans="";
+        for(int i=0;i<s1.length();i++){
+            if(s1.charAt(i)==' '){
+                c1++;
+            }
+        }
+        for(int i=0;i<s2.length();i++){
+            if(s2.charAt(i)==' '){
+                c2++;
+            }
+        }
+        int diff=Math.abs(c1-c2);
+        if(diff%2==0){
+            ans+="Even :"+diff;
+        }else{
+            ans+="Odd:"+diff;
+        }
+        return ans;
+    }
+
+    //28th aug
+    public static int snakeWatergun(int n,String s){
+        int i=0;
+        String str1="";
+
+        while(i<s.length()){
+            if(s.charAt(i)=='s'){
+                str1+="s";
+                i+=5;
+            }else if(s.charAt(i)=='w'){
+                str1+="w";
+                i+=5;
+            }else if(s.charAt(i)=='g'){
+                str1+="g";
+                i+=3;
+            }
+        }
+
+        i=0;
+        int count=0;
+        while(i<str1.length()-1){
+            if(isWin_A(str1.charAt(i),str1.charAt(i+1))){
+                count++;
+            }
+            i=i+2;
+        }
+        return count;
+    }
+    public static boolean isWin_A(char a, char b){
+        if(a=='s' && b=='w'){
+            return true;
+        }
+        if(a=='w' && b=='g'){
+            return true;
+        }
+        if(a=='g' && b=='s'){
+            return true;
+        }
+        return false;
+    }
+
+    //22nd october
+    public static String reverseString(String str){
+        StringBuilder sb=new StringBuilder(str);
+        sb=sb.reverse();
+        return sb.toString();
+    }
+
+    
     public static void main(String[] args) {
 //       Scanner sc=new Scanner(System.in);
 //        System.out.println("Enter the size:");
@@ -2215,7 +2410,7 @@ public static int SumOfEvenIndex(int a[],int n) {
 //        arr[i]=sc.nextInt();
 //    }
 //    int k=sc.nextInt();
-//    rotate(arr,k);
+//    a(arr,k);
 //    System.out.println("Rotated array is: "+Arrays.toString(arr));
 
 //    indianCoins();
@@ -2345,9 +2540,9 @@ public static int SumOfEvenIndex(int a[],int n) {
 //            System.out.println(longestSubstring(str));
 
 
-        //   System.out.println(countOccurrences("oxttojklts","t",11));
+        //   System.out.println(countOccurrences("oxttojklts","tto",11));
 
-         //   System.out.println(countOccurrences("oxttojklts","t",11));
+          System.out.println(countStringOccur("helloishelloinhello","hello",22));
 
 
         //    System.out.println(anagram("apriy","Priya"));
@@ -2399,9 +2594,17 @@ public static int SumOfEvenIndex(int a[],int n) {
        // System.out.println(whiteSpacediff("He ll o W or ld","Hello World"));
 
 
-        String a[]={"Hello","ccbc","aaeiou"};
-        System.out.println(maxPermutationValue(a));
+//        String a[]={"Hello","ccbc","aaeiou"};
+//        System.out.println(maxPermutationValue(a));
 
+//        String s1="abc abb ab";
+//        String s2="abc ab";
+//        System.out.print (countSpaceswithnum(s1,s2));
+
+     //   System.out.println(snakeWatergun(2,"snakewatersnakegungunsnake"));
+
+//        String str="Hello World!";
+//        System.out.print(reverseString(str));
     }
 
 
