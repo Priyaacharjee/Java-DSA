@@ -74,7 +74,7 @@ public class BinaryTrees {
                     if(q.isEmpty()){
                         break;
                     }else{
-                        q.add(null);
+                        q.add(null); //because the null got printed on next level also
                     }
                 }else{
                     System.out.print(currNode.data+" ");
