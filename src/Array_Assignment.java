@@ -38,8 +38,6 @@ public class Array_Assignment {
         return maxprofit;
     }
 
-    
-
     public static void main(String args[]){
         int n;
         int a[]=new int[10];
@@ -58,8 +56,9 @@ public class Array_Assignment {
         System.out.println();
 
         //System.out.println(duplicateele(a,n));
-        System.out.print("The max profit day:");
-        System.out.print(Maxprofit(a,n));
+//        System.out.print("The max profit day:");
+          System.out.print(Maxprofit(a,n));
+
     }
 }
 

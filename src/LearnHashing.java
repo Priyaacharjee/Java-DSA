@@ -115,6 +115,9 @@ public class LearnHashing {
 ////        System.out.println(hm.remove("China"));
 ////        System.out.println(hm);
 ////
+            //Size
+//          System.out.println(hm.size());
+
 ////        //Is Empty
 ////        hm.clear();
 ////        System.out.println(hm.isEmpty());
@@ -134,7 +137,7 @@ public class LearnHashing {
 ////        lhm.put("Us",50);
 ////        System.out.println(lhm);
 //
-//        TreeMap<String, Integer> tm= new TreeMap<>();
+//        TreeMap<String, Integer> tm= new TreeMap<>(); //keys are sorted //red black trees are used as DS
 //        tm.put("India",100);
 //        tm.put("China",150);
 //        tm.put("Us",50);

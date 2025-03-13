@@ -101,7 +101,7 @@ public class Strings {
 //
 //        //Strings are IMMUTABLE
         Scanner sc=new Scanner(System.in);
-//        String path=sc.nextLine();
+//      String path=sc.nextLine();
         String name=sc.nextLine();
         System.out.println(name);
 
