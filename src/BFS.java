@@ -39,10 +39,17 @@ public class BFS {
         graph[5].add(new Edge(5,6,1));
         graph[5].add(new Edge(6,5,1));
     }
-
-    public static void bfs(ArrayList<Edge>[] graph){  //O(V+E)
-        Queue<Integer> q = new LinkedList<>();
+    public static void bfs(ArrayList<Edge>[] graph){
         boolean vis[]=new boolean[graph.length];
+        for(int i=0;i< graph.length;i++){
+            if(!vis[i]){
+                bfsUtil(graph,vis);
+            }
+        }
+    }
+    public static void bfsUtil(ArrayList<Edge>[] graph,boolean vis[]){  //O(V+E)
+        Queue<Integer> q = new LinkedList<>();
+        //boolean vis[]=new boolean[graph.length];
         q.add(0); //source=0
 
         while(!q.isEmpty()){
