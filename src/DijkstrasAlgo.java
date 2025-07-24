@@ -1,5 +1,5 @@
 import java.util.*;
-
+//Dijkstra is a Greedy Based algo
 public class DijkstrasAlgo {
 
     static class Edge{
